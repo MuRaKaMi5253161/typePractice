@@ -1,30 +1,15 @@
-const person: {
-    // Object内の変数の型を指定できる
-    name: string;
-    age: number;
-    hobbies: string[],
-    role: [number,string];
-} = {
-    name: "tachi",
-    age: 22,
-    hobbies: ["sports", "shopping"],
-    role: [2, "author"],
-};
+let userInput: unknown;
+let userName: string;
 
-// person.role.push("admin");
-// person.role[1] = 10;
-
-// person.role = [0, "admin", "user"];
-
-let favoriteActivities: string[];
-
-// 数字を入れることはできない
-favoriteActivities = ["sports"]
-
-console.log(person)
-
-for(const hobby of person.hobbies) {
-    console.log(hobby);
-    // 大文字表示
-    console.log(hobby.toUpperCase());
+userInput = 5;
+userInput = 'Max';
+if (typeof userInput === 'string') {
+  userName = userInput;
 }
+
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code };
+  // while (true) {}
+}
+
+generateError('An error occurred!', 500);
